@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->foreignId('building_id')->constrained();
+            $table->string('name', 100)->nullable(true)->unique();
+            $table->foreignId('building_id')->constrained()->nullable(true);
             $table->timestamps();
         });
     }
