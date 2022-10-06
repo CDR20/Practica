@@ -5,12 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Group extends Model
+class Building extends Model
 {
     use HasFactory;
-
-    protected $fillable = [ 'key', 'number', 'career_id' ];
-
-
+    protected $fillable = [ 'number' ];
 }
-
