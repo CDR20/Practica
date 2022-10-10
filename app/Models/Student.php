@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Alumno extends Model
+class Student extends Model
 {
     use HasFactory;
 
@@ -14,5 +14,9 @@ class Alumno extends Model
     protected $attributes = [
         'status' => true
     ];
+
+    public function group(){
+        return $this->belongsTo( Group::class );
+    }
 
 }

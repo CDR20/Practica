@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->string('key', 10)->nullable(true);
-            $table->string('number', 6)->nullable(true);
-            $table->foreignId('career_id')->constrained()->nullable(true);
+            $table->string('key', 10);
+            $table->string('number', 6);
+            $table->foreignId('career_id')->nullable(true)->constrained();
             $table->timestamps();
         });
     }

@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use PHPUnit\TextUI\XmlConfiguration\Groups;
 
 return new class extends Migration
 {
@@ -14,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('alumnos', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('key', 8)->unique()->nullable(true);
-            $table->string('name', 100)->nullable(true);
-            $table->string('mail', 50)->unique()->nullable(true);
-            $table->string('password', 12)->nullable(true);
-            $table->boolean('status')->default(true)->nullable(true);
+            $table->string('key', 10)->unique();
+            $table->string('name', 100);
+            $table->string('email', 50)->unique();
+            $table->string('password', 100);
+            $table->boolean('status')->default(true);
             // $table->unsignedBigInteger('group_id');
             $table->foreignId('group_id')->constrained()->nullable(true);
             $table->timestamps();

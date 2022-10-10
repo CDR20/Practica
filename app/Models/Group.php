@@ -11,6 +11,9 @@ class Group extends Model
 
     protected $fillable = [ 'key', 'number', 'career_id' ];
 
+    public function students(){
+        return $this->hasMany( Student::class );
+    }
+
 
 }
-
